@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import TopNavigation from "@/components/TopNavigation";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={publicSan.className}>
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <TopNavigation />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
